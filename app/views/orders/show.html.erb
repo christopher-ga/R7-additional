@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<p>
+  <strong>Product Name:</strong>
+  <%= @order.product_name %>
+</p>
+
+<p>
+  <strong>Product Count:</strong>
+  <%= @order.product_count %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @order.customer.first_name %> <%= @order.customer.last_name %>
+</p>
+
+<div>
+  <%= link_to "Edit this order", edit_order_path(@order) %> |
+  <%= link_to "Back to orders", orders_path %>
+
+  <%= button_to "Destroy this order", @order, method: :delete, data: { confirm: "Are you sure?" } %>
+</div>
