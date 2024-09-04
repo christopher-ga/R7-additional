@@ -14,6 +14,25 @@
  *= require_self
  */
 
+@import "bootstrap";
+@import "font-awesome";
+
+:root {
+    --bs-body-bg: #e7a3f0;
+}
+
+.banner-background {
+    background-image: url('banner.webp');
+    background-size: cover;
+    font-family: Lucidity;
+}
+
+@font-face {
+    font-family: 'Lucidity';
+    src: url('lucidity-condensed.ttf');
+}
+
+
 .my_alert {
     color: red;
 }
