@@ -1,13 +1,32 @@
-<p style="color: green"><%= notice %></p>
+<!--<p style="color: green"><%#= notice %></p>-->
 
 <h1>Orders</h1>
 
-<div id="orders">
+<div class="container-fluid row">
   <% @orders.each do |order| %>
-    <p>
-      <%= link_to "Show this order", order %>
-    </p>
+    <div class="col-sm">
+      <!-- Card for each order -->
+      <div class="card border border-2 border-success p-1 mt-3" style="width: 18rem;">
+        <!-- Card header -->
+        <div class="card-header">
+          <strong>Order for: <%= order.product_name %></strong>
+        </div>
+
+
+        <div class="card-body">
+          <p class="card-text">Product Name: <%= order.product_name %></p>
+          <p class="card-text">Product Count: <%= order.product_count %></p>
+          <p class="card-text">Customer: <%= order.customer.full_name %></p>
+        </div>
+
+
+        <div class="card-footer">
+          <%= link_to 'Edit', edit_order_path(order), class: 'btn btn-primary' %>
+          <%= button_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New Order", new_order_path %>
+<%= link_to "New Order", new_order_path, class: 'btn btn-primary mt-3' %>
